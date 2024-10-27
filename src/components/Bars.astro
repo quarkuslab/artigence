@@ -1,0 +1,86 @@
+<style>
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 30vh;
+        background-color: white;
+        position: relative; /* Relative positioning for bars */
+    }
+
+    .bar {
+        width: 70%;
+        height: 100px;
+        border-radius: 0 15px 45px 0;
+        position: sticky; /* Make bars sticky */
+        margin-left: -10%;
+        opacity: 0; /* Initially hidden */
+        transform: translateX(-100%); /* Start from the left */
+        transition:
+            opacity 0.5s ease,
+            transform 0.5s ease; /* Smooth transition */
+        visibility: hidden; /* Initially hidden */
+    }
+
+    .bar.visible {
+        opacity: 1; /* Show when visible */
+        transform: translateX(0); /* Move into place */
+        visibility: visible; /* Make visible */
+    }
+
+    .bar1 {
+        background-color: #e5cdbd;
+        margin-top: 10px;
+    }
+
+    .bar2 {
+        width: 65%;
+        background-color: #114c40;
+    }
+
+    .bar3 {
+        width: 60%;
+        background-color: #000000;
+    }
+
+    .logo {
+        position: absolute;
+        right: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: black;
+    }
+</style>
+
+<div class="wrapper">
+    <div class="bar bar1">
+        <span class="logo">LOGO</span>
+    </div>
+    <div class="bar bar2">
+        <span class="logo">LOGO</span>
+    </div>
+    <div class="bar bar3"></div>
+</div>
+
+<script>
+    const bars = document.querySelectorAll(".bar");
+
+    function checkScroll() {
+        bars.forEach((bar) => {
+            const barPosition = bar.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (
+                barPosition < screenPosition &&
+                !bar.classList.contains("visible")
+            ) {
+                bar.classList.add("visible"); // Add 'visible' class to trigger animation
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+</script>
