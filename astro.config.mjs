@@ -1,7 +1,5 @@
+// @ts-check
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
-export default defineConfig({
-    site: 'https://reverse-rain.github.io',
-  base: 'artigence',
-});
+export default defineConfig({});
