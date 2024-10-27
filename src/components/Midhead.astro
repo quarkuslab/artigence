@@ -1,0 +1,126 @@
+<div class="wrapper">
+    <div class="left">
+        <p id="p">Heading</p>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+            excepturi corporis odio. Quos nobis autem laboriosam deleniti fugit
+            maiores mollitia veniam, error, rem omnis veritatis voluptatum
+            ducimus, temporibus provident necessitatibus? Amet, laborum nostrum
+            aliquam debitis qui quia harum facilis labore esse ex quidem natus,
+            tenetur alias reiciendis in molestiae optio at inventore nobis enim
+            magnam dolores expedita. 
+        </p>
+    </div>
+    <div class="right">
+        <div class="box-container">
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Base styles */
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 60vh;
+}
+
+.left {
+    width: 50%;
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#p {
+    color: rgb(0, 0, 0);
+    font-size: 3pc;
+    margin-top: 30px;
+}
+
+p {
+    margin-top: -30px;
+}
+
+.right {
+    width: 50%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-container {
+    position: relative;
+    width: 270px;
+    height: 270px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.box1 {
+    background: #e6e6e6;
+    transform: translate(-80px, 50px);
+    z-index: 5;
+}
+
+.box2 {
+    background: #000000;
+    transform: translate(0px, -0px);
+    z-index: 4;
+}
+
+.box3 {
+    background: #e6e6e6;
+    transform: translate(70px, -50px);
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; /* Stack the elements vertically */
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .right {
+        width: 100%;
+        order: -1; /* Display .right on top */
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    .left {
+        width: 100%; /* Take full width on mobile */
+        padding: 20px;
+    }
+
+    .box-container {
+        width: 100%;
+        max-width: 270px; /* Keep a max width for boxes */
+        margin: 0 auto; /* Center align */
+    }
+
+    #p {
+        font-size: 24px; /* Adjust heading size for mobile */
+    }
+    
+    p {
+        font-size: 14px; /* Adjust text size for mobile */
+    }
+}
+
+
+</style>
