@@ -4,9 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import "bootstrap/dist/css/bootstrap.css";
-import "aos/dist/aos.css";
-import "aos/dist/aos";
 ---
 
 <!doctype html>
@@ -17,13 +14,22 @@ import "aos/dist/aos";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+		
+		
 		<title>{title}</title>
 	</head>
 
 	<body>
 		<slot />
 	</body>
+
+	
 </html>
+
+
+
+
 
 <style is:global>
 	:root {
@@ -38,7 +44,7 @@ import "aos/dist/aos";
 		);
 	}
 	html {
-		padding: 0 50px;
+		padding:0 30px;
 		font-family: system-ui, sans-serif;
 		background: #ffffff;
 	}
@@ -53,8 +59,10 @@ import "aos/dist/aos";
 			Courier New,
 			monospace;
 	}
-	body {
+	body{
 		padding: 0px;
 		margin: 0px;
 	}
+
+	
 </style>
