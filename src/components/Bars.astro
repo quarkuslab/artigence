@@ -1,4 +1,6 @@
+
 <style>
+
     .wrapper {
         display: flex;
         flex-direction: column;
@@ -17,9 +19,7 @@
         margin-left: -10%;
         opacity: 0; /* Initially hidden */
         transform: translateX(-100%); /* Start from the left */
-        transition:
-            opacity 0.5s ease,
-            transform 0.5s ease; /* Smooth transition */
+        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
         visibility: hidden; /* Initially hidden */
     }
 
@@ -30,18 +30,18 @@
     }
 
     .bar1 {
-        background-color: #e5cdbd;
+        background-color: #d3d3d3;
         margin-top: 10px;
     }
 
     .bar2 {
         width: 65%;
-        background-color: #114c40;
+        background-color: black;
     }
 
     .bar3 {
         width: 60%;
-        background-color: #000000;
+        background-color: #d3d3d3;
     }
 
     .logo {
@@ -65,22 +65,20 @@
     <div class="bar bar3"></div>
 </div>
 
-<script>
-    const bars = document.querySelectorAll(".bar");
+<script is:client="load">
+    const bars = document.querySelectorAll('.bar');
 
     function checkScroll() {
-        bars.forEach((bar) => {
+        bars.forEach(bar => {
             const barPosition = bar.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.2;
 
-            if (
-                barPosition < screenPosition &&
-                !bar.classList.contains("visible")
-            ) {
-                bar.classList.add("visible"); // Add 'visible' class to trigger animation
+            if (barPosition < screenPosition && !bar.classList.contains('visible')) {
+                bar.classList.add('visible'); // Add 'visible' class to trigger animation
             }
         });
     }
 
-    window.addEventListener("scroll", checkScroll);
+    window.addEventListener('scroll', checkScroll);
 </script>
+
