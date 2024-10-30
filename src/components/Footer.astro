@@ -53,6 +53,9 @@
         align-items: flex-start;
         animation: appear 1s ease-out forwards;
         gap: 20px;
+        animation: appear;
+        animation-timeline: view();
+        animation-range: entry 0%  ;
     }
 
     .left, .right {
@@ -134,7 +137,7 @@
 
     @keyframes appear {
         from {
-            transform: scale(0.95);
+            transform: scale(0.5);
             opacity: 0;
         }
         to {
