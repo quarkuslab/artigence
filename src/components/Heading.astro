@@ -24,8 +24,6 @@
         background: linear-gradient(to bottom, #e5cdbd, rgb(255, 255, 255));
         width: 100%;
         height: 100vh;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
         opacity: 0;
         transform: translateY(300px) scale(1);
         transition:
@@ -34,6 +32,7 @@
         visibility: hidden;
         margin-top: -15%;
         transition: 0.5s;
+ 
 
 
     }
@@ -51,6 +50,9 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        animation: appear;
+        animation-timeline: view();
+        animation-range: entry 0%  ;
     }
 
     p {
