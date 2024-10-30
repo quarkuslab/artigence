@@ -2,16 +2,13 @@
     <div class="left">
         <p id="p">Heading</p>
         <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
             excepturi corporis odio. Quos nobis autem laboriosam deleniti fugit
             maiores mollitia veniam, error, rem omnis veritatis voluptatum
             ducimus, temporibus provident necessitatibus? Amet, laborum nostrum
             aliquam debitis qui quia harum facilis labore esse ex quidem natus,
             tenetur alias reiciendis in molestiae optio at inventore nobis enim
-            magnam dolores expedita. Voluptatum, cumque adipisci. Sint commodi
-            velit ducimus cupiditate, in iure saepe ratione aut labore impedit
-            officia at debitis magni. Laborum excepturi dolorum consequatur
-            dicta numquam ab enim quibusdam est esse modi. Culpa, voluptatem?
+            magnam dolores expedita.
         </p>
     </div>
     <div class="right">
@@ -24,66 +21,137 @@
 </div>
 
 <style>
+/* Base styles */
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    animation: appear;
+        animation-timeline: view();
+        animation-range: entry 0%  ;
+
+}
+
+.left {
+    width: 50%;
+    background: #ffffff;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#p {
+    color: rgb(0, 0, 0);
+    font-size: 6pc;
+    margin-top: 30px;
+
+}
+
+p {
+    margin-top: -30px;
+    margin-left: 20%;
+}
+
+.right {
+    width: 50%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-container {
+    position: relative;
+    width: 270px;
+    height: 270px;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transition: transform 1s ease, opacity 1s ease, z-index 1s;
+    animation: stackAnimation 9s infinite;
+    opacity: 0; /* Initially hidden */
+
+}
+
+@keyframes stackAnimation {
+    0%, 33% {
+        opacity: 1;
+        transform: translate(-80px, 50px);
+        z-index: 3;
+    }
+    33.33%, 66.66% {
+        opacity: 1;
+        transform: translate(0px, -0px);
+        z-index: 2;
+    }
+    66.67%, 100% {
+        opacity: 1;
+        transform: translate(70px, -50px);
+        z-index: 1;
+    }
+}
+
+/* Assign delay to each box to create rotation effect */
+.box1 {
+    background: #E5CDBD;
+    animation-delay: 0s;
+}
+
+.box2 {
+    background: #114C40;
+    animation-delay: 3s;
+}
+
+.box3 {
+    background: #000000;
+    animation-delay: 6s;
+
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
     .wrapper {
-        display: flex;
-        width: 100%;
-        height: 60vh;
-        background: #000;
+        flex-direction: column; /* Stack the elements vertically */
+        height: 100vh;
+         /* Adjust height to fit content */
     }
-    .left {
-        width: 50%;
-        background: #ffffff;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    #p {
-        color: rgb(0, 0, 0);
-        font-size: 3pc;
-        margin-top: 30px;
-    }
-    p {
-        margin-top: -30px;
-    }
+
     .right {
-        width: 50%;
-        background: #ffffff;
+        width: 100%;
+        order: -1; /* Display .right on top */
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 100px;
+    }
+
+    .left {
+        width: 100%; /* Take full width on mobile */
+    
     }
 
     .box-container {
-        position: relative;
-        width: 270px;
-        height: 270px;
-    }
-
-    .box {
         width: 100%;
-        height: 100%;
-        position: absolute;
-        border-radius: 10px;
+        max-width: 250px; /* Keep a max width for boxes */
     }
 
-    .box1 {
-        background: #e6e6e6;
-        transform: translate(-80px, 50px);
-        z-index: 5;
+    #p {
+        /* Adjust heading size for mobile */
     }
-
-    .box2 {
-        background: #000000;
-        transform: translate(0px, -0px);
-        z-index: 4;
-    }
-
-    .box3 {
-        background: #e6e6e6;
-        transform: translate(70px, -50px);
-    }
-
     
+    p {
+        font-size: 14px; /* Adjust text size for mobile */
+        margin-top: -50px;
+        margin-left: 0%;
+        padding: 20px;
+
+    }
+}
 
 </style>

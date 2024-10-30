@@ -1,58 +1,70 @@
-<div class="position-relative marquee-container d-none d-sm-block">
-    <div class="marquee d-flex justify-content-around">
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-    </div>
-    <div class="marquee marquee2 d-flex justify-content-around">
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-      <h1>HEADING</h1>
-    </div>
-    
+<div class="position-relative marquee-container d-none d-sm-block d-sm-flex">
+  <div class="marquee d-flex justify-content-around">
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
   </div>
-  <style>
+  <div class="marquee marquee2 d-flex justify-content-around">
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+    <h1>HEADING</h1>
+  </div>
+</div>
+
+<style>
+  .marquee-container {
+    background: #ffffff;
+    height: 100vh; /* Consider adjusting this */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee,
+  .marquee2 {
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 15s linear infinite;
+  }
+
+  /* Delaying the second marquee so it doesn't overlap */
+  .marquee2 {
+    animation-delay: 7.5s;
+  }
+
+  h1 {
+    margin: 0 20px; /* Reduced margin for better fit */
+    font-size: 5rem; /* Reduced font size for mobile */
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Media Queries for Mobile Devices */
+  @media (max-width: 576px) {
     .marquee-container {
-        margin-top: 50px;
-        margin-bottom: 50px;
-  height: 50px; /* Adjust height as needed */
-  overflow: hidden;
-  line-height: 50px;
-  position: relative;
-}
+      height: 50vh; /* Adjust height for mobile */
+    }
 
-.marquee {
-  top: 0;
-  left: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  animation: marquee 15s linear infinite; /* Adjust speed here */
-}
-
-.marquee2 {
-  animation-delay: 7.5s; /* Half of the animation time to stagger the second one */
-}
-
-h1 {
-  display: inline-block;
-  margin: 0 50px; /* Adjust space between headings */
-  font-size: 5cap;
-  font-weight: 100; /* Regular weight */
-}
-
-@keyframes marquee {
-  0% {
-    left: 100%;
+    h1 {
+      font-size: 3rem; /* Further reduce font size for smaller screens */
+      margin: 0 10px; /* Further reduce margins */
+    }
   }
-  100% {
-    left: -100%;
-  }
-}
-
-  </style>
+</style>

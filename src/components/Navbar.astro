@@ -22,7 +22,7 @@
     .nav {
         display: flex;
         background: #ffffff;
-        width: 95%;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
@@ -69,36 +69,46 @@
     }
 
     /* Responsive styling for mobile */
-    @media (max-width: 600px) {
+    @media (max-width: 780px) {
         .nav {
+            width: 100%;
+            padding-inline: 0px;
+            
+
             flex-direction: row; /* Arrange items in a row */
             justify-content: space-between; /* Space between items */
         }
 
         .logowrapper {
-            justify-content: flex-start; /* Align items to the start */
+            
+            justify-content: flex-start; 
+            margin-left: 3%;/* Align items to the start */
+            margin-top: 3%;/* Align items to the start */
+
         }
 
         /* Hide the link container by default on mobile */
         .link {
+       
             display: flex;
-            flex-direction: column; /* Stack icons vertically */
+            flex-direction: ; /* Stack icons vertically */
             position: fixed; /* Fix position for sliding menu */
             top: 0; /* Align to top */
             right: -100vw; /* Position offscreen */
-            height: 100vh; /* Full viewport height */
-            width: 60vw; /* Width of the slide-out menu */
-            background: #ffffff; /* Background color */
-            padding-top: 20px; /* Space from the top */
-            transition: right 0.3s ease; /* Smooth transition */
-            align-items: center; /* Center align icons */
+            /* Width of the slide-out menu */
+            margin-right: 50px;
+            margin-top: 10px;
+            padding: 20px; /* Space from the top */
+            transition: right 0.5s ease; /* Smooth transition */
             gap: 20px; /* Space between icons */
-            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+
         }
 
         .menu-icon {
-            display: block; /* Show toggle icon on mobile */
-            z-index: 1; /* Ensure icon is above other content */
+            margin-right: 3%;
+            margin-top: 3%;/* Align items to the start */
+            display: block; 
+            z-index: 0; /* Ensure icon is above other content */
             font-size: 1.8em; /* Increase font size */
             position: relative; /* Relative positioning */
         }
