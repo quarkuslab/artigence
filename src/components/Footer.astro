@@ -18,9 +18,9 @@
         <div class="top">
             <h1>KEEP IN TOUCH</h1>
             <div class="links">
-                <img src="Vector.png" alt="" />
-                <img src="🦆 icon _facebook icon_.png" alt="" />
-                <img src="🦆 icon _instagram icon_.png" alt="" />
+                <img src="icon_green1 (2).png" alt="" />
+                <img src="icon_green1 (1).png" alt="" />
+                <img src="icon_green1 (3).png" alt="" />
             </div>
         </div>
         <div class="bottom">
@@ -36,11 +36,15 @@
 </div>
 <style>
     .footer {
-        background-color: #d3d3d3; /* Light gray */
-        color: #000000;
+        transition: 1s;
+        background-color: #114C40; /* Light gray */
+        color: #E5CDBD;
         width: 100%;
         height: 60vh;
         display: flex;
+        animation: appear;
+        animation-timeline: view();
+        animation-range: entry 0%  ;
     }
     .left {
         width: 50%;
@@ -61,7 +65,7 @@
         font-size: 15cap;
         font-weight: 300; /* Regular weight */
         margin-left:50px ;
-        margin-top: -10px;
+        margin-top: 5%;
 
     }
     ul {
@@ -71,7 +75,7 @@
         margin: 10px;
     }
     .links{
-        margin-top: -25px;
+        margin-top: 5%;
     }
     .contacts{
       display: flex;
@@ -79,5 +83,38 @@
       margin-top: 15%;
       margin-right: 10%;  
     }
-</style>
+        /* Responsive layout for mobile devices */
+        @media (max-width: 768px) {
 
+            .top h1 {
+        font-size: 3cap;
+        
+        font-weight: 100; /* Regular weight */
+        transition: 0.5s;
+
+    }
+    .bottom h1{
+        transition: 0.5s;
+
+        font-size: 5cap;
+        font-weight: 300; /* Regular weight */
+        margin-top: 20%;
+
+    }
+    img{
+        margin-top: 10%;
+        height: 20px;
+
+    }
+    }
+
+@keyframes appear {
+    from{
+        scale: 0.5;
+
+    }
+    to{
+        scale: 1;
+    }
+}
+</style>

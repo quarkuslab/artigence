@@ -6,14 +6,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        height: 30vh;
+        height: 100vh;
         background-color: white;
         position: relative; /* Relative positioning for bars */
+        transition: 0.5s;
+
     }
 
     .bar {
-        width: 70%;
-        height: 100px;
+
+        width: 80%;
+        height:17%;
         border-radius: 0 15px 45px 0;
         position: sticky; /* Make bars sticky */
         margin-left: -10%;
@@ -30,18 +33,18 @@
     }
 
     .bar1 {
-        background-color: #d3d3d3;
+        background-color: #E5CDBD;
         margin-top: 10px;
     }
 
     .bar2 {
-        width: 65%;
-        background-color: black;
+        width: 75%;
+        background-color: #114C40;
     }
 
     .bar3 {
-        width: 60%;
-        background-color: #d3d3d3;
+        width: 70%;
+        background-color: #000000;
     }
 
     .logo {
@@ -65,7 +68,7 @@
     <div class="bar bar3"></div>
 </div>
 
-<script is:client="load">
+<script client:"load">
     const bars = document.querySelectorAll('.bar');
 
     function checkScroll() {
@@ -81,4 +84,3 @@
 
     window.addEventListener('scroll', checkScroll);
 </script>
-
