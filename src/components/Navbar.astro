@@ -22,7 +22,7 @@
     .nav {
         display: flex;
         background: #ffffff;
-        width: 95%;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
@@ -69,20 +69,27 @@
     }
 
     /* Responsive styling for mobile */
-    @media (max-width: 600px) {
+    @media (max-width: 780px) {
         .nav {
-            overflow: hidden;
+            width: 100%;
+            padding-inline: 0px;
+            
+
             flex-direction: row; /* Arrange items in a row */
             justify-content: space-between; /* Space between items */
         }
 
         .logowrapper {
             
-            justify-content: flex-start; /* Align items to the start */
+            justify-content: flex-start; 
+            margin-left: 3%;/* Align items to the start */
+            margin-top: 3%;/* Align items to the start */
+
         }
 
         /* Hide the link container by default on mobile */
         .link {
+       
             display: flex;
             flex-direction: ; /* Stack icons vertically */
             position: fixed; /* Fix position for sliding menu */
@@ -98,7 +105,9 @@
         }
 
         .menu-icon {
-            display: block; /* Show toggle icon on mobile */
+            margin-right: 3%;
+            margin-top: 3%;/* Align items to the start */
+            display: block; 
             z-index: 0; /* Ensure icon is above other content */
             font-size: 1.8em; /* Increase font size */
             position: relative; /* Relative positioning */

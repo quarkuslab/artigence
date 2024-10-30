@@ -1,4 +1,4 @@
-<div class="position-relative marquee-container d-none d-sm-block">
+<div class="position-relative marquee-container d-none d-sm-block d-sm-flex">
   <div class="marquee d-flex justify-content-around">
     <h1>HEADING</h1>
     <h1>HEADING</h1>
@@ -17,9 +17,8 @@
 
 <style>
   .marquee-container {
-
     background: #ffffff;
-    height: 100vh;
+    height: 100vh; /* Consider adjusting this */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,7 +26,8 @@
     position: relative;
   }
 
-  .marquee, .marquee2 {
+  .marquee,
+  .marquee2 {
     position: absolute;
     display: flex;
     white-space: nowrap;
@@ -41,8 +41,8 @@
   }
 
   h1 {
-    margin: 0 50px;
-    font-size: 8rem;
+    margin: 0 20px; /* Reduced margin for better fit */
+    font-size: 5rem; /* Reduced font size for mobile */
     font-weight: 300;
     color: rgb(0, 0, 0);
   }
@@ -53,6 +53,18 @@
     }
     100% {
       transform: translateX(-100%);
+    }
+  }
+
+  /* Media Queries for Mobile Devices */
+  @media (max-width: 576px) {
+    .marquee-container {
+      height: 50vh; /* Adjust height for mobile */
+    }
+
+    h1 {
+      font-size: 3rem; /* Further reduce font size for smaller screens */
+      margin: 0 10px; /* Further reduce margins */
     }
   }
 </style>
