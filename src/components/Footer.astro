@@ -16,11 +16,11 @@
     </div>
     <div class="right">
         <div class="top">
-            <h1>KEEP IN TOUCH</h1>
+            <h1 class="contact-heading">KEEP IN TOUCH</h1>
             <div class="links">
-                <img src="icon_green1 (2).png" alt="" />
-                <img src="icon_green1 (1).png" alt="" />
-                <img src="icon_green1 (3).png" alt="" />
+                <img src="icon_green1 (2).png" alt="Social Icon" />
+                <img src="icon_green1 (1).png" alt="Social Icon" />
+                <img src="icon_green1 (3).png" alt="Social Icon" />
             </div>
         </div>
         <div class="bottom">
@@ -34,91 +34,115 @@
         </div>
     </div>
 </div>
+
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     .footer {
-        transition: 1s;
-        background-color: #114C40; /* Light gray */
+        background-color: #114C40;
         color: #E5CDBD;
         width: 100%;
-        height: 60vh;
+        padding: 4% 5%;
         display: flex;
+        flex-direction: row; /* Maintain two-column layout */
+        justify-content: space-between;
+        align-items: flex-start;
+        animation: appear 1s ease-out forwards;
+        gap: 20px;
         animation: appear;
         animation-timeline: view();
         animation-range: entry 0%  ;
     }
-    .left {
-        width: 50%;
-        height: 100%;
-    }
-    .right {
-        width: 50%;
-        height: 100%;
-    }
-    .top {
-        margin-top: 100px;
-    }
-    .top h1 {
-        font-size: 5cap;
-        font-weight: 100; /* Regular weight */
- 
-    }
-    .bottom h1{
-        font-size: 8vw;
-        font-weight: 300; /* Regular weight */
-        margin-left:50px ;
-        margin-top: 2%;
 
-
-    }
-    ul {
-        list-style: none;
-    }
-    li {
-        margin: 10px;
-    }
-    .links{
-        margin-top: 5%;
+    .left, .right {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%; /* Each section takes half the width */
+    }
+
+    .left .top ul, .right .contacts ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
-    }
-    .contacts{
-      display: flex;
-      float: right;
-      margin-top: 15%;
-      margin-right: 10%;  
-    }
-        /* Responsive layout for mobile devices */
-        @media (max-width: 768px) {
-
-            .top h1 {
-        font-size: 3cap;
-        
-        font-weight: 100; /* Regular weight */
-        transition: 0.5s;
-
-    }
-    .bottom h1{
-        transition: 0.5s;
-
-        font-size: 4cap;
-        font-weight: 300; /* Regular weight */
-        margin-top: 20%;
-
-    }
-    img{
-        margin-top: 10%;
-        height: 20px;
-        
-    }
+        font-size: 1.2rem;
     }
 
-@keyframes appear {
-    from{
-        scale: 0.5;
+    .left .bottom h1 {
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        font-weight: 300;
+        margin: 10px 0;
+    }
 
+    .contact-heading {
+        font-size: clamp(1.5rem, 4vw, 2rem); /* Smaller size for "KEEP IN TOUCH" */
+        font-weight: 300;
+        margin-bottom: 10px;
     }
-    to{
-        scale: 1;
+
+    .links {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
     }
-}
+
+    .links img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .contacts {
+        margin-top: 10px;
+    }
+
+    .contacts ul li {
+        font-size: 1rem;
+    }
+
+    /* Responsive layout for mobile devices */
+    @media (max-width: 768px) {
+        .footer {
+            flex-direction: row; /* Keep two-column layout on smaller screens */
+            align-items: flex-start; /* Align items to the top */
+            padding: 8% 5%;
+        }
+
+        .left .bottom h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+        }
+
+        .contact-heading {
+            font-size: clamp(1.2rem, 6vw, 1.5rem); /* Adjusting for smaller screens */
+        }
+
+        .left .top ul, .right .contacts ul {
+            flex-direction: column; /* Maintain column layout */
+            gap: 15px;
+        }
+
+        .links img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .left, .right {
+            width: 50%; /* Keep sections at 50% width */
+        }
+    }
+
+    @keyframes appear {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 </style>
