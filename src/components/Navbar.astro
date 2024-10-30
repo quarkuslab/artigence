@@ -1,10 +1,7 @@
----
----
-
 <div class="nav">
     <div class="logowrapper">
         <img class="logo" src="Group.png" alt="">
-        <h3>Artigence</h3> <!-- This will now be directly under the logo -->
+        <h3>Artigence</h3>
     </div>
 
     <!-- Toggle checkbox for menu -->
@@ -12,9 +9,15 @@
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
     <div class="link">
-        <img src="Vector.png" alt="">
-        <img src="🦆 icon _facebook icon_.png" alt="">
-        <img src="🦆 icon _instagram icon_.png" alt="">
+        <a href="https://example.com/homepage" target="_blank">
+            <img src="Vector.png" alt="Homepage">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+            <img src="🦆 icon _facebook icon_.png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="🦆 icon _instagram icon_.png" alt="Instagram">
+        </a>
     </div>
 </div>
 
@@ -25,98 +28,87 @@
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        position: relative;
+        padding: 10px 3%;
+        box-sizing: border-box;
     }
 
     .logowrapper {
         display: flex;
-        flex-direction: column; /* Stack logo and text vertically */
-        align-items: center; /* Center align items */
+        flex-direction: column;
+        align-items: center;
         color: rgb(0, 0, 0);
-        margin-left: 3%; /* Space from the left edge */
-        margin-top: 2%;
     }
 
     .logo {
-        margin-bottom: 5px; /* Space between logo and text */
-        height: 40px; /* Set a specific height for the logo */
+        margin-bottom: 5px;
+        height: 40px;
     }
 
     h3 {
         margin: 0;
-        font-size: 1.5em; /* Font size for brand text */
-        text-align: center; /* Center text */
+        font-size: 1.5em;
+        text-align: center;
     }
 
     .link {
         display: flex;
-        gap: 10px; /* Space between icons */
+        gap: 10px;
+        margin-right: 3%;
     }
 
     .link img {
-        height: 30px; /* Set height for icons */
+        height: 25px;
     }
 
-    /* Toggle checkbox hidden */
     .menu-toggle {
-        display: none; /* Hide the toggle checkbox */
+        display: none;
     }
 
-    /* Toggle icon styling */
     .menu-icon {
-        display: none; /* Hide the toggle icon by default */
-        font-size: 1.5em; /* Font size for the toggle icon */
-        cursor: pointer; /* Change cursor to pointer on hover */
+        display: none;
+        font-size: 1.8em;
+        cursor: pointer;
     }
 
-    /* Responsive styling for mobile */
-    @media (max-width: 780px) {
+  /* Responsive styling for mobile */
+  @media (max-width: 780px) {
         .nav {
             width: 100%;
             padding-inline: 0px;
-            
-
-            flex-direction: row; /* Arrange items in a row */
-            justify-content: space-between; /* Space between items */
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         .logowrapper {
-            
-            justify-content: flex-start; 
-            margin-left: 3%;/* Align items to the start */
-            margin-top: 3%;/* Align items to the start */
-
+            justify-content: flex-start;
+            margin-left: 3%;
+            margin-top: 3%;
         }
 
-        /* Hide the link container by default on mobile */
         .link {
-       
             display: flex;
-            flex-direction: ; /* Stack icons vertically */
-            position: fixed; /* Fix position for sliding menu */
-            top: 0; /* Align to top */
-            right: -100vw; /* Position offscreen */
-            /* Width of the slide-out menu */
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: -100vw;
             margin-right: 50px;
             margin-top: 10px;
-            padding: 20px; /* Space from the top */
-            transition: right 0.5s ease; /* Smooth transition */
-            gap: 20px; /* Space between icons */
-
+            padding: 20px;
+            transition: right 0.5s ease;
+            gap: 20px;
         }
 
         .menu-icon {
             margin-right: 3%;
-            margin-top: 3%;/* Align items to the start */
-            display: block; 
-            z-index: 0; /* Ensure icon is above other content */
-            font-size: 1.8em; /* Increase font size */
-            position: relative; /* Relative positioning */
+            margin-top: 3%;
+            display: block;
+            z-index: 0;
+            font-size: 1.8em;
+            position: relative;
         }
 
-        /* Slide the menu into view when checkbox is checked */
         .menu-toggle:checked ~ .link {
-            right: 0; /* Slide in the menu */
+            right: 0;
         }
     }
 </style>
